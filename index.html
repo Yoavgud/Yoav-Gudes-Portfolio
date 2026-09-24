@@ -1136,18 +1136,31 @@ try{
     ? window.claude.use('downloads').then(function(d){ downloadsCap = d; return d; })
     : Promise.resolve(null);
 
+  function fallbackDownload(entry){
+    // Plain-browser download (works on GitHub Pages and anywhere else the
+    // Claude artifact "downloads" capability isn't present).
+    var blob = b64ToBlob(entry.b64);
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = entry.filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  }
+
   document.querySelectorAll('.resume-link').forEach(function(btn){
     btn.addEventListener('click', function(){
       var entry = RESUMES[btn.getAttribute('data-resume')];
       if (!entry) return;
       downloadsReady.then(function(d){
         if (!d){
-          btn.textContent = 'Unavailable here — email me for a copy';
-          btn.disabled = true;
+          fallbackDownload(entry);
           return;
         }
         d.save({ filename: entry.filename, data: b64ToBlob(entry.b64) }).catch(function(){
-          // viewer declined, rate-limited, or another rejection — no retry
+          fallbackDownload(entry);
         });
       });
     });
