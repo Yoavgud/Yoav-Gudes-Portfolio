@@ -30,6 +30,7 @@ tokens = {
 pdf_tokens = {
     "__RESUME_HW_B64__": os.path.join(RES_DIR, "Yoav_Gudes_Semiconductor_Engineering_Resume.pdf"),
     "__RESUME_SW_B64__": os.path.join(RES_DIR, "Yoav_Gudes_AI-ML_Engineering_Resume.pdf"),
+    "__RESUME_MIX_B64__": os.path.join(RES_DIR, "Yoav_Gudes_AI-ML_and_Semiconductor_Engineering_Resume.pdf"),
 }
 
 with open(TEMPLATE, "r", encoding="utf-8") as f:
