@@ -60,7 +60,7 @@
   .titleblock .sub-2{margin-top:3px; color:var(--accent-semi); font-weight:500;}
 
   /* ---------- page grid ---------- */
-  .page{max-width:1160px; margin:0 auto; padding:18px 24px 70px; display:grid; grid-template-columns:250px 1fr; gap:26px; align-items:start;}
+  .page{max-width:1160px; margin:0 auto; padding:18px 24px 70px; display:grid; grid-template-columns:260px 1fr; gap:26px; align-items:start;}
   @media (max-width:860px){ .page{grid-template-columns:1fr;} .sidebar{position:static !important;} }
 
   /* ---------- sidebar ---------- */
@@ -257,6 +257,7 @@
   .award-list li b{font-weight:600;}
   .award-list li span{color:var(--muted); font-family:var(--mono); font-size:11.5px; white-space:nowrap;}
 
+
   .lang-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:6px;}
   .lang-pill{border:1px solid var(--hair); border-radius:999px; background:var(--surface); padding:9px 16px; font-size:13.5px; display:flex; align-items:center; gap:8px;}
   .lang-pill b{font-weight:600;}
@@ -271,6 +272,7 @@
   .skill-strip .strip-link{font-family:var(--mono); font-size:11.5px; color:var(--muted);}
   .skill-strip .strip-link:hover{color:var(--accent-semi);}
   .skill-pills{display:flex; flex-wrap:nowrap; gap:4px; margin-top:12px; overflow-x:auto; padding-bottom:2px; scrollbar-width:thin;}
+  @media (max-width:860px){ .skill-pills{flex-wrap:wrap; overflow-x:visible;} }
   .skill-pill{border-radius:999px; padding:5px 10px; font-size:11.5px; font-weight:500; white-space:nowrap; flex:0 0 auto; background:var(--surface-2); color:var(--ink-2); border:1px solid var(--hair);}
 
   .contact-block{display:flex; flex-direction:column; gap:10px; margin-top:8px; max-width:420px;}
@@ -500,15 +502,15 @@
         </a></li>
         <li><a href="#skills">
           <svg class="icon" viewBox="0 0 24 24"><path d="m14.5 3 6.5 6.5-11 11L3 20l.5-7Z"/><path d="m13 6.5 4.5 4.5"/></svg>
-          Skills
+          Technical Skills
         </a></li>
         <li><a href="#community">
           <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 9.5a3 3 0 1 0-1-5.8"/><path d="M17 14.3a6 6 0 0 1 4.5 5.7"/></svg>
-          Leadership &amp; Community
+          Leadership &amp; Community Work
         </a></li>
         <li><a href="#awards">
           <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="5.2"/><path d="m8.5 13 -1.5 8 5-2.5 5 2.5-1.5-8"/></svg>
-          Awards
+          Awards &amp; Certifications
         </a></li>
         <li><a href="#languages">
           <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a13.5 13.5 0 0 1 0 18"/><path d="M12 3a13.5 13.5 0 0 0 0 18"/></svg>
@@ -557,12 +559,12 @@
         About
       </h2>
       <ul class="jots">
-        <li>Fourth-year Nanotechnology Engineering student at the <a href="https://uwaterloo.ca" target="_blank" rel="noopener">University of Waterloo</a>, in the Nanoelectronics Specialization and also pursuing the Quantum Engineering Option</li>
-        <li>16 months of co-op across GPU hardware at WOLF Advanced Technology (8 months), AI/ML at TD Bank (4 months) and data engineering at MedReddie (4 months)</li>
-        <li><strong>Lab work:</strong> cleanroom fabrication of silicon MIS capacitors, synthesis of quantum dots, SPIONs and polymers, and characterization with C–V/I–V, SEM, FTIR and UV–Vis</li>
-        <li><strong>Work experience:</strong> validation of 50+ rugged NVIDIA/AMD GPUs and failure analysis of 10 failed units, an NLP classifier benchmarked against Azure AI, and LLM-powered data pipelines</li>
+        <li>Fourth-year Nanotechnology Engineering student at the <a href="https://uwaterloo.ca" target="_blank" rel="noopener">University of Waterloo</a> in the Nanoelectronics Specialization and Quantum Engineering Option, with an 86% average and Dean's List standing</li>
+        <li>16 months of co-op across GPU hardware validation at WOLF Advanced Technology (8 months), AI/ML at TD Bank (4 months) and data engineering at MedReddie (4 months)</li>
+        <li><strong>Lab work:</strong> cleanroom microfabrication, nanomaterial synthesis and electrical and materials characterization</li>
+        <li><strong>Work experience:</strong> GPU validation and failure analysis, machine learning models and LLM data automation</li>
       </ul>
-      <p class="about-interest">Interested in semiconductor roles, from fabrication to validation. Available for co-op Winter–Summer 2027.</p>
+      <p class="about-interest">Interested in semiconductor, hardware and applied AI/ML roles. Available for co-op Winter–Summer 2027.</p>
     </section>
 
     <h3 class="section-label">Featured Work</h3>
@@ -882,7 +884,7 @@
       <a class="back-link" href="#landing">← Back to portfolio</a>
       <h2>
         <svg class="icon" viewBox="0 0 24 24"><path d="m14.5 3 6.5 6.5-11 11L3 20l.5-7Z"/><path d="m13 6.5 4.5 4.5"/></svg>
-        Skills
+        Technical Skills
       </h2>
       <div class="skills-grid">
         <div class="skills-col semi">
@@ -908,7 +910,7 @@
       <a class="back-link" href="#landing">← Back to portfolio</a>
       <h2>
         <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 9.5a3 3 0 1 0-1-5.8"/><path d="M17 14.3a6 6 0 0 1 4.5 5.7"/></svg>
-        Leadership &amp; Community
+        Leadership &amp; Community Work
       </h2>
       <article class="entry">
         <h3>Student Body President — Hillel Waterloo &amp; Laurier</h3>
@@ -921,7 +923,7 @@
       <a class="back-link" href="#landing">← Back to portfolio</a>
       <h2>
         <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="5.2"/><path d="m8.5 13 -1.5 8 5-2.5 5 2.5-1.5-8"/></svg>
-        Awards
+        Awards &amp; Certifications
       </h2>
       <ul class="award-list">
         <li><b>Term Distinction (Dean's List)</b><span>University of Waterloo</span></li>
@@ -946,6 +948,7 @@
         <div class="lang-pill"><b>Spanish</b><span>Conversational</span></div>
       </div>
     </section>
+
 
   </main>
 </div>
@@ -995,38 +998,6 @@ try{
   route();
 })();
 
-// ---- align skill-strip bottom with the sidebar's contact-card bottom (two-column layout only) ----
-(function(){
-  var skillStrip = document.querySelector('.skill-strip');
-  var contactCard = document.querySelector('.contact-card');
-  var landing = document.getElementById('landing');
-  if (!skillStrip || !contactCard || !landing) return;
-
-  function align(){
-    skillStrip.style.marginTop = '';
-    contactCard.style.marginTop = '';
-    if (window.innerWidth <= 860) return; // stacked mobile layout — nothing to align
-    if (landing.style.display === 'none') return; // a detail section is open, not the landing view
-    var stripRect = skillStrip.getBoundingClientRect();
-    var contactRect = contactCard.getBoundingClientRect();
-    var diff = stripRect.bottom - contactRect.bottom;
-    if (Math.abs(diff) < 1) return;
-    if (diff > 0){
-      contactCard.style.marginTop = diff + 'px';
-    } else {
-      skillStrip.style.marginTop = (-diff) + 'px';
-    }
-  }
-
-  var resizeTimer;
-  window.addEventListener('load', align);
-  window.addEventListener('resize', function(){
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(align, 120);
-  });
-  window.addEventListener('hashchange', function(){ setTimeout(align, 30); });
-  setTimeout(align, 60);
-})();
 
 // ---- C-V chart ----
 (function(){
@@ -1178,6 +1149,34 @@ try{
       });
     });
   });
+})();
+
+// ---- keep the sidebar contact card's bottom lined up with the Technical Skills card's bottom (two-column layout only) ----
+(function(){
+  var strip = document.querySelector('#landing .skill-strip');
+  var contactCard = document.querySelector('.contact-card');
+  var landing = document.getElementById('landing');
+  if (!strip || !contactCard || !landing) return;
+  var busy = false;
+  function align(){
+    if (busy) return; busy = true;
+    strip.style.marginTop = '';
+    contactCard.style.marginTop = '';
+    if (window.innerWidth > 860 && landing.style.display !== 'none'){
+      var diff = strip.getBoundingClientRect().bottom - contactCard.getBoundingClientRect().bottom;
+      if (diff >= 1) contactCard.style.marginTop = diff + 'px';
+      else if (diff <= -1) strip.style.marginTop = (-diff) + 'px';
+    }
+    requestAnimationFrame(function(){ busy = false; });
+  }
+  var t;
+  function soon(){ clearTimeout(t); t = setTimeout(align, 60); }
+  window.addEventListener('load', align);
+  window.addEventListener('resize', soon);
+  window.addEventListener('hashchange', soon);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(align);
+  document.querySelectorAll('#landing img').forEach(function(img){ if (!img.complete) img.addEventListener('load', soon); });
+  soon();
 })();
 </script>
 
