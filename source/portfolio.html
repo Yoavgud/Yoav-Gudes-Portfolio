@@ -191,6 +191,23 @@
   .footer-row b{color:var(--ink); font-weight:600; text-align:right;}
   .footer-row .standing{color:var(--accent-semi);}
   .footer-row .pending{color:var(--muted); font-style:italic; font-weight:500;}
+  .skill-group-label{display:flex; align-items:center; gap:10px; margin-top:22px; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;}
+  .skill-group-label::after{content:""; flex:1; height:1px; background:var(--hair);}
+  .skill-group-label.hw{color:var(--accent-semi);}
+  .skill-group-label.sw{color:var(--accent-ai);}
+  .skill-cards{margin-top:12px;}
+  .m-only{display:none;}
+  .skill-line .it{white-space:nowrap;}
+  @media (min-width:1200px){ .skill-card{display:grid; grid-row:span 5; grid-template-rows:subgrid; row-gap:0; align-content:start;} .skill-card .skill-line{align-items:baseline;} }
+  @media (max-width:860px){ .m-only{display:inline;} }
+  @media (max-width:1199px){ .skill-cards{grid-template-columns:1fr;} }
+  .skill-card h4{font-size:13px; font-weight:700; margin:0 0 10px;}
+  .skill-line{display:flex; gap:12px; padding:9px 0; border-top:1px solid var(--hair); font-size:12.5px; color:var(--ink-2); align-items:baseline; line-height:1.45;}
+  .skill-line .lbl{font-family:var(--mono); font-size:10.5px; color:var(--muted); flex:0 0 112px;}
+  .skill-line .val{flex:1; text-wrap:balance;}
+  .skill-line .lbl{white-space:nowrap;}
+  .skill-summary span{display:block; text-wrap:balance;}
+  @media (max-width:560px){ .skill-line{flex-direction:column; gap:2px; padding:8px 0;} .skill-line .lbl{flex-basis:auto;} }
   .course-focus{margin-top:16px; border:1px solid var(--hair); border-radius:var(--radius); background:var(--surface); padding:14px 16px;}
   .course-focus .focus-label{font-size:12px; font-weight:600; color:var(--ink-2);}
   .focus-chips{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:10px;}
@@ -886,22 +903,83 @@
         <svg class="icon" viewBox="0 0 24 24"><path d="m14.5 3 6.5 6.5-11 11L3 20l.5-7Z"/><path d="m13 6.5 4.5 4.5"/></svg>
         Technical Skills
       </h2>
-      <div class="skills-grid">
-        <div class="skills-col semi">
-          <h4>Semiconductor &amp; Hardware</h4>
-          <div class="skill-row"><span>Devices</span><span>Diodes, MIS capacitors, MOSFETs</span></div>
-          <div class="skill-row"><span>Fabrication</span><span>PECVD, DC sputtering, photolithography, RIE &amp; wet etch</span></div>
-          <div class="skill-row"><span>Characterization</span><span>C–V/I–V, 4-point probe, ellipsometry, SEM/TEM, FTIR/Raman/UV–Vis</span></div>
-          <div class="skill-row"><span>Circuits</span><span>Analog biasing, CMOS logic, transistor switching</span></div>
-          <div class="skill-row"><span>CAD &amp; test</span><span>SolidWorks thermal design, environmental &amp; electrical GPU test</span></div>
+      <p class="course-summary-line skill-summary"><span><b>Hardware:</b> Fabrication, Characterization &amp; Validation</span><span><b>Software:</b> Python, Machine Learning &amp; LLM Automation</span></p>
+
+      <div class="skill-group-label hw">Hardware</div>
+      <div class="course-terms skill-cards">
+        <div class="course-term skill-card">
+          <h4>Semiconductor Fabrication</h4>
+          <div class="skill-line"><span class="lbl">Deposition</span><span class="val"><span class="it">PECVD Dielectrics,</span> <span class="it">DC Sputter Metallization</span></span></div>
+          <div class="skill-line"><span class="lbl">Lithography</span><span class="val"><span class="it">UV Photolithography,</span> <span class="it">Mask Alignment,</span> <span class="it">Multi-Level Patterning</span></span></div>
+          <div class="skill-line"><span class="lbl">Etching</span><span class="val"><span class="it">Reactive Ion Etching (RIE),</span> <span class="it">Wet Chemical Etching</span></span></div>
+          <div class="skill-line"><span class="lbl">Process Flow</span><span class="val"><span class="it">End-to-End</span> MIS Device Fabrication, <span class="it">RCA Cleaning</span></span></div>
         </div>
-        <div class="skills-col ai">
-          <h4>AI, ML &amp; Data</h4>
-          <div class="skill-row"><span>Modeling</span><span>XGBoost, supervised learning, sentence embeddings</span></div>
-          <div class="skill-row"><span>Tuning</span><span>GridSearchCV, Bayesian optimization (Optuna)</span></div>
-          <div class="skill-row"><span>LLM automation</span><span>API integration, document extraction</span></div>
-          <div class="skill-row"><span>Data engineering</span><span>Web scraping, pipelines, validation, databases</span></div>
-          <div class="skill-row"><span>Languages</span><span>Python, SQL, Java, MATLAB</span></div>
+        <div class="course-term skill-card">
+          <h4>Devices &amp; Circuits</h4>
+          <div class="skill-line"><span class="lbl">Devices</span><span class="val"><span class="it">Diodes,</span> <span class="it">BJTs,</span> <span class="it">MOSFETs,</span> <span class="it">MIS Capacitors,</span> <span class="it">CMOS Logic</span></span></div>
+          <div class="skill-line"><span class="lbl">Analog Design</span><span class="val"><span class="it">Transistor Biasing,</span> <span class="it">Small-Signal Analysis,</span> <span class="it">Amplifier Design</span></span></div>
+          <div class="skill-line"><span class="lbl">Optoelectronics</span><span class="val"><span class="it">LEDs,</span> <span class="it">Lasers,</span> <span class="it">Photodetectors,</span> <span class="it">Quantum Dot LEDs</span></span></div>
+          <div class="skill-line"><span class="lbl">Design Tools</span><span class="val"><span class="it">LTspice Circuit Simulation,</span> <span class="it">Arduino Prototyping</span></span></div>
+        </div>
+        <div class="course-term skill-card">
+          <h4>Materials &amp; Electrical Characterization</h4>
+          <div class="skill-line"><span class="lbl">Electrical</span><span class="val"><span class="it">C–V/I–V Characterization,</span> <span class="it">4-Point Probe,</span> <span class="it">Probe Station</span></span></div>
+          <div class="skill-line"><span class="lbl">Imaging &amp; Spectra</span><span class="val"><span class="it">SEM,</span> <span class="it">TEM,</span> <span class="it">AFM,</span> <span class="it">Optical Microscopy;</span> <span class="it">FTIR,</span> <span class="it">Raman,</span> <span class="it">UV–Vis</span></span></div>
+          <div class="skill-line"><span class="lbl">Thin Film</span><span class="val"><span class="it">Ellipsometry,</span> <span class="it">Profilometry,</span> <span class="it">X-Ray Diffraction (XRD)</span></span></div>
+          <div class="skill-line"><span class="lbl">Thermal &amp; Mech.</span><span class="val"><span class="it">DSC,</span> <span class="it">TGA,</span> <span class="it">Tensile &amp;</span> <span class="it">Impact Testing</span></span></div>
+        </div>
+        <div class="course-term skill-card">
+          <h4>Materials Synthesis</h4>
+          <div class="skill-line"><span class="lbl">Quantum Dots</span><span class="val"><span class="it">Size-Controlled</span> CdSe Quantum Dot Synthesis</span></div>
+          <div class="skill-line"><span class="lbl">Nanomaterials</span><span class="val"><span class="it">SPIONs,</span> SAED (Sr–Al–Eu–Dy) Nanoparticles, <span class="it">Carbon Nanotubes</span></span></div>
+          <div class="skill-line"><span class="lbl">Polymers</span><span class="val"><span class="it">ROMP,</span> <span class="it">Bulk Epoxy,</span> <span class="it">Emulsion Polymerization</span></span></div>
+          <div class="skill-line"><span class="lbl">Processing</span><span class="val"><span class="it">Spin Coating,</span> <span class="it">Vacuum Baking</span></span></div>
+        </div>
+        <div class="course-term skill-card">
+          <h4>Hardware Validation &amp; Testing</h4>
+          <div class="skill-line"><span class="lbl">GPU Validation</span><span class="val"><span class="it">CUDA Bandwidth Testing,</span> <span class="it">FurMark &amp;</span> <span class="it">GPU-Z Stress Testing</span></span></div>
+          <div class="skill-line"><span class="lbl">Environmental</span><span class="val"><span class="it">Thermal Cycling,</span> <span class="it">Test Fixturing,</span> <span class="it">Automated Data Logging</span></span></div>
+          <div class="skill-line"><span class="lbl">Failure Analysis</span><span class="val"><span class="it">Stack-Up &amp;</span> <span class="it">Root-Cause Analysis,</span> <span class="it">RMA Repair &amp;</span> <span class="it">Rework</span></span></div>
+          <div class="skill-line"><span class="lbl">Bench Work</span><span class="val"><span class="it">Rugged VPX Assembly,</span> <span class="it">Oscilloscope,</span> <span class="it">Function Generator</span></span></div>
+        </div>
+        <div class="course-term skill-card">
+          <h4>CAD, Thermal Design &amp; Quality</h4>
+          <div class="skill-line"><span class="lbl">CAD</span><span class="val"><span class="it">SolidWorks Parts,</span> <span class="it">Assemblies &amp;</span> <span class="it">Drawings;</span> <span class="it">AutoCAD;</span> <span class="it">3D Printing</span></span></div>
+          <div class="skill-line"><span class="lbl">Thermal Design</span><span class="val"><span class="it">Heat Pipes,</span> <span class="it">Vapor Chambers,</span> <span class="it">Cold Spray Deposition</span></span></div>
+          <div class="skill-line"><span class="lbl">Standards</span><span class="val"><span class="it">MIL-STD-810 &amp;</span> VITA 47.1 Environmental Compliance</span></div>
+          <div class="skill-line"><span class="lbl">Quality</span><span class="val"><span class="it">ISO 9001 &amp;</span> <span class="it">AS9100D Quality Systems,</span> <span class="it">BPMS Procedures,</span> <span class="it">BOMs</span></span></div>
+        </div>
+      </div>
+
+      <div class="skill-group-label sw">Software</div>
+      <div class="course-terms skill-cards">
+        <div class="course-term skill-card">
+          <h4>Programming &amp; Tools</h4>
+          <div class="skill-line"><span class="lbl">Languages</span><span class="val"><span class="it">Python,</span> <span class="it">SQL,</span> <span class="it">Java,</span> <span class="it">MATLAB</span></span></div>
+          <div class="skill-line"><span class="lbl">Libraries</span><span class="val"><span class="it">Pandas,</span> <span class="it">scikit-learn,</span> <span class="it">XGBoost,</span> <span class="it">Optuna,</span> <span class="it">Sentence-Transformers</span></span></div>
+          <div class="skill-line"><span class="lbl">Dev Tools</span><span class="val"><span class="it">Git,</span> <span class="it">GitHub,</span> <span class="it">Jupyter,</span> <span class="it">Azure Databricks</span></span></div>
+          <div class="skill-line"><span class="lbl">Automation</span><span class="val"><span class="it">Python Data Logging Scripts,</span> <span class="it">Selenium Web Automation</span></span></div>
+        </div>
+        <div class="course-term skill-card">
+          <h4>Machine Learning</h4>
+          <div class="skill-line"><span class="lbl">Models</span><span class="val"><span class="it">Gradient Boosting,</span> <span class="it">Random Forests,</span> <span class="it">Multi-Class Classification</span></span></div>
+          <div class="skill-line"><span class="lbl">NLP</span><span class="val"><span class="it">Sentence-Transformer</span> Embeddings (MPNet), <span class="it">UMAP,</span> <span class="it">Text Classification</span></span></div>
+          <div class="skill-line"><span class="lbl">Tuning</span><span class="val">Bayesian Optimization (Optuna), <span class="it">GridSearchCV,</span> <span class="it">Class Rebalancing</span></span></div>
+          <div class="skill-line"><span class="lbl">Evaluation</span><span class="val"><span class="it">Precision,</span> <span class="it">Recall &amp;</span> <span class="it">F1,</span> <span class="it">Error Analysis,</span> <span class="it">Model Benchmarking</span></span></div>
+        </div>
+        <div class="course-term skill-card">
+          <h4>LLMs &amp; Agentic AI</h4>
+          <div class="skill-line"><span class="lbl">LLM Pipelines</span><span class="val"><span class="it">Multi-Step</span> LLM Workflows via the Gemini API</span></div>
+          <div class="skill-line"><span class="lbl">Prompting</span><span class="val"><span class="it">Few-Shot Prompting,</span> <span class="it">Structured Outputs,</span> <span class="it">Fallback Handling</span></span></div>
+          <div class="skill-line"><span class="lbl">Agentic Tools</span><span class="val"><span class="it">Claude,</span> <span class="it">Codex,</span> <span class="it">MCP Connectors</span></span></div>
+          <div class="skill-line"><span class="lbl">AI-Assisted Work</span><span class="val"><span class="it">Agentic Web Development,</span> <span class="it">Research &amp;</span> <span class="it">Technical Writing</span></span></div>
+        </div>
+        <div class="course-term skill-card">
+          <h4>Data Engineering</h4>
+          <div class="skill-line"><span class="lbl">Pipelines</span><span class="val"><span class="it">Speech-to-Text &amp;</span> <span class="it">LLM-Based</span> Data Extraction Pipelines</span></div>
+          <div class="skill-line"><span class="lbl">Scraping</span><span class="val"><span class="it">BeautifulSoup,</span> <span class="it">Selenium,</span> <span class="it">Requests</span></span></div>
+          <div class="skill-line"><span class="lbl">Data Quality</span><span class="val"><span class="it">Fuzzy Matching,</span> <span class="it">Deduplication,</span> <span class="it">Validation,</span> <span class="it">Labeling</span></span></div>
+          <div class="skill-line"><span class="lbl">Data Platforms</span><span class="val"><span class="it">SQL Databases,</span> <span class="it">Azure Databricks,</span> <span class="it">Azure AI</span></span></div>
         </div>
       </div>
     </section>

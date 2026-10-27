@@ -7,14 +7,16 @@ without starting from scratch.
 ## What's here
 
 - `portfolio_template.html` — the real source file. Has `__IMG_...__` and
-  `__RESUME_HW_B64__` / `__RESUME_SW_B64__` placeholder tokens instead of the
+  `__RESUME_HW_B64__` / `__RESUME_SW_B64__` / `__RESUME_MIX_B64__` placeholder tokens instead of the
   giant inline base64 blobs. **Edit this file**, not `index.html` directly.
 - `build.py` — reads `portfolio_template.html`, embeds every image in `imgs/`
   and both résumés in `resumes/` as base64 data, and writes `portfolio.html`
   (a fully self-contained file, same format as `index.html`).
 - `imgs/` — every photo/screenshot used on the site, as plain `.jpg` files.
-- `resumes/` — the two résumé PDFs that get embedded for the sidebar download
-  buttons (Semiconductor/Hardware and AI/Software versions).
+- `resumes/` — the three résumé PDFs that get embedded for the sidebar download
+  buttons (Semiconductor/Hardware, AI/Software, and AI/ML & Semiconductor).
+  To update one, copy the new PDF from `Resume/Original Resumes/` over the
+  matching file here and rebuild.
 
 ## How to make an edit (for a Claude session with this folder connected)
 
